@@ -3,40 +3,36 @@ package collections;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.HashSet;
 
 /**
- * Created by Valentina on 16.09.2016.
+ * Created by Valentina on 18.09.2016.
  */
-public class SortWords {
-    private static final String fileName = "./src/words.txt";
-    private static File file = new File(fileName);
+/*
+Подсчитайте количество различных слов в файле
+ */
+public class FirstTask {
+    private static final String FILE_NAME = "./src/words.txt";
+    private static File file = new File(FILE_NAME);
 
     public static void main(String[] args) {
-        TreeSet<String > sortWords=new TreeSet<>(new LengthComporator());
+
+        HashSet<String> fileWords = new HashSet<>();
+
         if (file.exists()) {
 
             try (BufferedReader in = new BufferedReader(new FileReader(file));) {
                 String s;
                 while ((s = in.readLine()) != null) {
-                    sortWords.add(s);
-                    }
+                    fileWords.add(s);
+                }
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+            int count = fileWords.size();
+            System.out.println(count);
         } else
             System.out.println("Error: FileNotFoundException");
-
-        Iterator<String> i = sortWords.iterator();
-
-        while(i.hasNext()) {
-            String ts = i.next();
-            System.out.println(ts);
-        }
-
-
-
     }
 }
