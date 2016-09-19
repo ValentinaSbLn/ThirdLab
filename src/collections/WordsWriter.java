@@ -24,7 +24,7 @@ public class WordsWriter {
     public Set writeInSet(Set set) {
         if (file.exists()) {
 
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     set.add(s);
@@ -38,11 +38,15 @@ public class WordsWriter {
             System.out.println("Error: FileNotFoundException");
         return set;
     }
-
+    /**
+     * This method writes the words from a file into List
+     * @param list
+     * @return List - Set with words
+     */
     public List writeInList(List list) {
         if (file.exists()) {
 
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     list.add(s);

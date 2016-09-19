@@ -35,7 +35,7 @@ public class SecondTask {
         });
 
         if (file.exists()) {
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     sortWords.add(s);

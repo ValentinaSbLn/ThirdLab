@@ -22,7 +22,7 @@ public class FifthTask {
 
         MyArrayListWithItr myArray = new MyArrayListWithItr();
         if (file.exists()) {
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     myArray.add(s);

@@ -21,7 +21,7 @@ public class FirstTask {
 
         if (file.exists()) {
 
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     fileWords.add(s);

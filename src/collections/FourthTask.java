@@ -20,7 +20,7 @@ public class FourthTask {
 
         if (file.exists()) {
 
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     fileWords.add(s);
@@ -33,6 +33,7 @@ public class FourthTask {
 
         } else
             System.out.println("Error: FileNotFoundException");
+
         ListIterator iterator=fileWords.listIterator(fileWords.size());
         while (iterator.hasPrevious()) {
             System.out.println(iterator.previous());

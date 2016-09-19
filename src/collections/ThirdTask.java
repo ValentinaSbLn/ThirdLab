@@ -18,7 +18,7 @@ public class ThirdTask {
 
         Map<String, Integer> mapWords = new HashMap<>();
         if (file.exists()) {
-            try (BufferedReader in = new BufferedReader(new FileReader(file));) {
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     mapWords.put(s, (mapWords.containsKey(s)) ? mapWords.get(s) + 1 : 1);
@@ -28,6 +28,7 @@ public class ThirdTask {
             }
         } else
             System.out.println("Error: FileNotFoundException");
+
         for (String s : mapWords.keySet())
             System.out.println(s + ": " + mapWords.get(s));
     }
