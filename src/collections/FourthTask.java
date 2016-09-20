@@ -16,7 +16,7 @@ public class FourthTask {
  */
     public static void main(String[] args) {
 
-        List<String> fileWords = new LinkedList<>();
+        List<String> fileWords = new ArrayList<>();
 
         if (file.exists()) {
 
